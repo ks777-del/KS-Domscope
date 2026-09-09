@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0d13;
+  --color-panel: #0f1420;
+  --color-panel2: #141b29;
+  --color-line: #1e2837;
+  --color-fg: #dce4f0;
+  --color-muted: #7f8ca0;
+  --color-accent: #4f8cff;
+  --color-accent2: #22d3ee;
+  --color-ok: #34d399;
+  --color-warn: #fbbf24;
+  --color-bad: #f87171;
+  --color-info: #60a5fa;
+  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+}
+
+html, body { height: 100%; }
+body { background: var(--color-bg); color: var(--color-fg); font-feature-settings: "ss01", "cv11"; }
+
+* { scrollbar-width: thin; scrollbar-color: #26314a transparent; }
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: #26314a; border-radius: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+.mono { font-family: var(--font-mono); }
+.panel { background: var(--color-panel); border: 1px solid var(--color-line); border-radius: 12px; }
+.grid-bg {
+  background-image: linear-gradient(to right, rgba(79,140,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(79,140,255,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.glow { box-shadow: 0 0 0 1px rgba(79,140,255,0.25), 0 0 40px rgba(79,140,255,0.15); }
+.fade-in { animation: fade .25s ease-out; }
+@keyframes fade { from { opacity: 0; transform: translateY(3px);} to { opacity: 1; transform: none; } }
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+input, textarea, select { color-scheme: dark; }
+kbd { font-family: var(--font-mono); font-size: 10px; border: 1px solid var(--color-line); border-radius: 4px; padding: 1px 5px; color: var(--color-muted); }
+.prose-ai p { margin: 0 0 .6em; } .prose-ai ul, .prose-ai ol { margin: 0 0 .6em 1.2em; } .prose-ai li { margin: .15em 0; } .prose-ai code { font-family: var(--font-mono); font-size: 12px; background: #1a2232; padding: 1px 4px; border-radius: 4px; } .prose-ai pre { background: #0b1018; border: 1px solid var(--color-line); border-radius: 8px; padding: 10px; overflow: auto; font-size: 12px; margin: 0 0 .6em; } .prose-ai strong { color: #fff; }
